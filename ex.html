@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>超カオス・Google Sans Flex スタイラー</title>
+  
+  <!-- Google Sans Flex を Google Fonts から読み込み (全軸利用可能にする) -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Google+Sans+Flex:wght,wdth,slnt,GRAD,ROND,opsz@100..900,25..151,-10..0,-200..150,0..100,6..144&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-size: 16px;
+      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1); /* ヌルッと変わるアニメーション */
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Google Sans Flex を適用するターゲットクラス */
+    .google-sans-flex-chaos {
+      font-family: "Google Sans Flex", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 40px;
+      
+      /* 初期値（ここがJSで完全に書き換わります） */
+      font-weight: 400;
+      font-variation-settings: "slnt" 0, "wdth" 100, "GRAD" 0, "ROND" 0;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border: 3px solid currentColor;
+      background: transparent;
+      color: inherit;
+      font-weight: 900;
+      border-radius: 8px;
+      font-family: "Google Sans Flex", sans-serif;
+      font-variation-settings: "ROND" 100; /* ボタンの文字は丸く */
+      transition: transform 0.1s ease;
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- カオスに変化するテキスト -->
+  <h1 id="targetText" class="google-sans-flex-chaos">
+    Google Sans Flex<br>Extreme Chaostic Mode
+  </h1>
+
+  <button id="randomBtn">Randomize</button>
+
+  <script>
+    const btn = document.getElementById('randomBtn');
+    const text = document.getElementById('targetText');
+
+    // 指定された範囲のランダムな数値を返す関数
+    function getRandomRange(min, max, isInteger = true) {
+      const val = Math.random() * (max - min) + min;
+      return isInteger ? Math.floor(val) : parseFloat(val.toFixed(2));
+    }
+
+    // ランダムな16進数カラーを生成
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // ボタンクリックイベント
+    btn.addEventListener('click', () => {
+      // 1. カラーと基本サイズのランダム化
+      document.body.style.backgroundColor = getRandomColor();
+      document.body.style.color = getRandomColor();
+      text.style.fontSize = getRandomRange(20, 90) + 'px';
+
+      // 2. Google Sans Flex の6つの可変軸を完全ランダム生成
+      const wght = getRandomRange(100, 900);     // 太さ (Thin ~ Extra Bold)
+      const slnt = getRandomRange(-10, 0);       // 傾き (スラント)
+      const wdth = getRandomRange(25, 151);      // 文字幅 (極細 ~ 超ワイド)
+      const grad = getRandomRange(-200, 150);    // グレード (肉厚感)
+      const rond = getRandomRange(0, 100);       // 角の丸み (シャープ ~ 丸文字)
+      const opsz = getRandomRange(6, 144);       // オプティカルサイズ (視覚最適化)
+
+      // 3. font-weightプロパティの更新
+      text.style.fontWeight = wght;
+
+      // 4. font-variation-settingsを一括書き換え（超カオス変化）
+      text.style.fontVariationSettings = `
+        "slnt" ${slnt},
+        "wdth" ${wdth},
+        "GRAD" ${grad},
+        "ROND" ${rond},
+        "opsz" ${opsz}
+      `;
+      
+      // コンソールに現在のカオスパラメーターを出力（デバッグ用）
+      console.log(`wght:${wght}, slnt:${slnt}, wdth:${wdth}, GRAD:${grad}, ROND:${rond}, opsz:${opsz}`);
+    });
+  </script>
+
+</body>
+</html>

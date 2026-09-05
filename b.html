@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>スライダーでテキストサイズ変更</title>
+  <style>
+    body {
+      padding: 40px;
+      font-family: sans-serif;
+    }
+    .controls {
+      margin-bottom: 20px;
+    }
+    /* 可変させるテキスト */
+    #text {
+      font-size: 16px; /* 初期サイズ */
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="controls">
+    <!-- min:最小値(px), max:最大値(px), value:初期値 -->
+    <input type="range" id="sizeSlider" min="0" max="200" value="16">
+    <!-- 現在の数値を表示する用 -->
+    <span id="sizeValue">16</span>px
+  </div>
+
+  <p id="text">このテキストの大きさがスライダーで変わります。</p>
+
+  <script>
+    const slider = document.getElementById('sizeSlider');
+    const text = document.getElementById('text');
+    const sizeValue = document.getElementById('sizeValue');
+
+    // スライダーを動かしている時にリアルタイムに実行
+    slider.addEventListener('input', (event) => {
+      const currentSize = event.target.value;
+      
+      // テキストのフォントサイズを変更（数値を px 単位にする）
+      text.style.fontSize = currentSize + 'px';
+      
+      // 画面上の数値表示を更新
+      sizeValue.textContent = currentSize;
+    });
+  </script>
+
+</body>
+</html>

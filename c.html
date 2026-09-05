@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Styler</title>
+  <style>
+    body {
+      /* 初期スタイル */
+      background-color: #ffffff;
+      color: #000000;
+      font-size: 16px;
+      font-weight: 400;
+      
+      /* 変化をなめらかにする（お好みで外してもOK） */
+      transition: all 0.2s ease;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      border: 2px solid currentColor;
+      background: transparent;
+      color: inherit; /* 文字色に追従 */
+      font-weight: bold;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="targetText">このテキストと背景がランダムに変わります！</p>
+  <button id="randomBtn">RANDOMIZE</button>
+
+  <script>
+    const btn = document.getElementById('randomBtn');
+    const text = document.getElementById('targetText');
+
+    // ランダムな16進数カラーコード（#ffffff形式）を生成する関数
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // ランダムなフォントウェイトを生成する関数（100〜900の100刻み）
+    function getRandomFontWeight() {
+        const min = 1;
+        const max = 9;
+        return Math.floor(Math.random() * (max - min) + min) * 100;
+    }
+
+    // ランダムなフォントサイズを生成する関数（12px 〜 80px）
+    function getRandomFontSize() {
+      const min = 12;
+      const max = 80;
+      return Math.floor(Math.random() * (max - min + 1) + min) + 'px';
+    }
+
+    // ボタンクリック時のイベント
+    btn.addEventListener('click', () => {
+      // 1. 背景色を変える
+      document.body.style.backgroundColor = getRandomColor();
+      
+      // 2. 文字色を変える
+      document.body.style.color = getRandomColor();
+      
+      // 3. テキストの太さを変える
+      text.style.fontWeight = getRandomFontWeight();
+      
+      // 4. テキストのサイズを変える
+      text.style.fontSize = getRandomFontSize();
+    });
+  </script>
+
+</body>
+</html>
