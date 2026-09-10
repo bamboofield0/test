@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test form c</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="shibaura.ico" rel="icon">
+</head>
+
+<body>
+    <div class="title-div">
+        <h1 class="title">Test Form</h1>
+        <p class="title-sub">Please fill in the form bellow.</p>
+    </div>
+    <div class="main-plat" id="plat-a">
+        <h2 class="form-title">Form Type 1</h2>
+        <div class="section">
+            <div class="section-title">
+                <div class="logo-background">
+                    <div id="person-logo"></div>
+                </div>
+                <div class="section-title-div">
+                    <h2 class="section-title-h">Personal Information</h2>
+                    <p class="section-title-p">Plese enter your personal details.</p>
+                </div>
+            </div>
+            <div class="input-cont">
+                <div class="input-box-cont">
+                    <p class="label-text">First name <span class="astarisk" id="ast-first">*</span></p>
+                    <label class="input-label">
+                        <div class="input-line">
+                            <div class="input-icon" id="name-icon"></div>
+                            <input class="input" id="form-first" name="first-name" type="text"
+                                placeholder="Type your first name" autocomplete="given-name">
+                        </div>
+                    </label>
+                </div>
+                <div class="input-box-cont">
+                    <p class="label-text">Family name <span class="astarisk" id="ast-last">*</span></p>
+                    <label class="input-label">
+                        <div class="input-line">
+                            <div class="input-icon" id="name-icon"></div>
+                            <input class="input" id="form-last" name="last-name" type="text"
+                                placeholder="Type your family name" autocomplete="family-name">
+                        </div>
+                    </label>
+                </div>
+                <div class="input-box-cont">
+                    <p class="label-text">Birth date <span class="astarisk" id="ast-birth">*</span></p>
+                    <label class="input-label">
+                        <div class="input-line">
+                            <div class="input-icon" id="birth-icon"></div>
+                            <input class="input" id="form-birth" name="birth-date" type="text" placeholder="yyyy/mm/dd">
+                        </div>
+                    </label>
+                </div>
+                <div class="input-box-cont">
+                    <p class="label-text">Email address <span class="astarisk" id="ast-mail">*</span></p>
+                    <label class="input-label">
+                        <div class="input-line">
+                            <div class="input-icon" id="mail-icon"></div>
+                            <input class="input" id="form-mail" name="mail" type="text" placeholder="example@email.com"
+                                autocomplete="email">
+                        </div>
+                    </label>
+                </div>
+                <div class="input-box-cont">
+                    <p class="label-text">Phone number <span class="astarisk" id="ast-phone">*</span></p>
+                    <label class="input-label">
+                        <div class="input-line">
+                            <div class="input-icon" id="phone-icon"></div>
+                            <input class="input" id="form-tel" name="phone-number" type="text"
+                                placeholder="000-0000-0000" autocomplete="tel">
+                        </div>
+                    </label>
+                </div>
+                <div class="input-box-cont">
+                    <p class="label-text">Postal code <span class="astarisk" id="ast-post">*</span></p>
+                    <label class="input-label">
+                        <div class="input-line">
+                            <div class="input-icon" id="post-icon"></div>
+                            <input class="input" id="form-post" name="post-code" type="text" placeholder="000-0000"
+                                autocomplete="postal-code">
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-plat" id="plat-b">
+        <div class="section">
+            <div class="section-title">
+                <div class="logo-background">
+                    <div id="card-logo"></div>
+                </div>
+                <div class="section-title-div">
+                    <h2 class="section-title-h">Payment Information</h2>
+                    <p class="section-title-p">Plese select about your payment details.</p>
+                </div>
+            </div>
+            <div class="input-cont">
+                <div class="radio-box-cont">
+                    <p>Payment method <span class="astarisk" id="ast-pay">*</span></p>
+                    <div class="radio-cont">
+                        <label class="radio-label">
+                            <div class="radio-box">
+                                <div class="radio-button-box">
+                                    <input type="radio" name="payment" class="radio-button">
+                                </div>
+                                <div class="radio-box-line">
+                                    <div class="radio-icon" id="pay-card"></div>
+                                    <div class="radio-text">
+                                        <h3 class="radio-text-title">Card</h3>
+                                        <p class="radio-text-flavor">Pay with your credit card or a debit card</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="radio-label">
+                            <div class="radio-box">
+                                <div class="radio-button-box">
+                                    <input type="radio" name="payment" class="radio-button">
+                                </div>
+                                <div class="radio-box-line">
+                                    <div class="radio-icon" id="pay-paypal"></div>
+                                    <div class="radio-text">
+                                        <h3 class="radio-text-title">Paypal</h3>
+                                        <p class="radio-text-flavor">Pay secure with paypal</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="radio-label">
+                            <div class="radio-box">
+                                <div class="radio-button-box">
+                                    <input type="radio" name="payment" class="radio-button">
+                                </div>
+                                <div class="radio-box-line">
+                                    <div class="radio-icon" id="pay-bitcoin"></div>
+                                    <div class="radio-text">
+                                        <h3 class="radio-text-title">BitCoin</h3>
+                                        <p class="radio-text-flavor">Bittokoinn de shiharaeru tokorotte arunndesuka</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="radio-label">
+                            <div class="radio-box">
+                                <div class="radio-button-box">
+                                    <input type="radio" name="payment" class="radio-button">
+                                </div>
+                                <div class="radio-box-line">
+                                    <div class="radio-icon" id="pay-bank"></div>
+                                    <div class="radio-text">
+                                        <h3 class="radio-text-title">Banking</h3>
+                                        <p class="radio-text-flavor">Pay with your bank account.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-plat" id="plat-c">
+        <div class="section" id="privacy-policy-section">
+            <div class="section-title">
+                <div class="logo-background">
+                    <div id="privacy-logo"></div>
+                </div>
+                <div class="section-title-div">
+                    <h2 class="section-title-h">Agreement</h2>
+                    <p class="section-title-p">Please confirm the term before submitting.</p>
+                </div>
+            </div>
+            <div class="input-cont">
+                <div class="agreement-line">
+                    <label>
+                        <div class="checkbox-cont">
+                            <div class="check-mark">
+                                <input type="checkbox" class="checkbox" name="privacy" id="checkbox">
+                            </div>
+                        </div>
+                    </label>
+                    <p><label for="checkbox">I agree</label> to the <label for="boolean"><span id="policy">Privacy
+                                Policy</span></label>.<span class="astarisk" id="ast-policy">*</span></p>
+                </div>
+            </div>
+            <div class="policy-accordion">
+                <input type="checkbox" id="boolean" class="boolean">
+                <div class="accordion-text">
+                    <h2>Privacy Policy</h2>
+                    <div class="accordion-text-h">
+                        <div class="accordion-text-p">
+                            <p>This website is a test and learning project created for the purpose of checking form
+                                layout,
+                                user interface behavior, and input validation.</p>
+                        </div>
+                        <h3>1. About Information Input</h3>
+                        <div class="accordion-text-p">
+                            <p>This website contains form fields such as name and email address; however,any information
+                                entered into the form is not transmitted, communicated, or stored in any way.<br>Even if
+                                the
+                                submit button is pressed, no data is sent to a server, no external communication occurs,
+                                and
+                                no information is saved.</p>
+                        </div>
+                        <h3>2. Use of Information</h3>
+                        <div class="accordion-text-p">
+                            <p>The entered content is used only for on-screen behavior and display testing purposes.
+                                The information is not collected, processed, or used as personal data.</p>
+                        </div>
+                        <h3>3. Third-Party Disclosure</h3>
+                        <div class="accordion-text-p">
+                            <p>Since no data transmission occurs,
+                                the entered information is not provided to any third party.</p>
+                        </div>
+                        <h3>4. Important Notice</h3>
+                        <div class="accordion-text-p">
+                            <p>This website is intended for testing purposes.
+                                Please do not enter real or sensitive personal information.</p>
+                        </div>
+                        <h3>5. Changes to This Policy</h3>
+                        <div class="accordion-text-p">
+                            <p>This privacy policy may be updated without prior notice in accordance with changes to the
+                                test content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="submit-section">
+        <label>
+            <div class="submit-button" id="submit-button">
+                <div class="submit-icon"></div>
+                <p id="submit-text">Submit
+                <div class="ted">ted</div>
+                </p>
+            </div>
+            <input type="checkbox" class="boolean" id="submit-boolean">
+        </label>
+        <div class="sub-text">
+            <div class="sub-text-icon"></div>
+            <p class="sub-text-text">Your information is secure and will not be shared.</p>
+        </div>
+    </div>
+</body>
+
+
+</html>
