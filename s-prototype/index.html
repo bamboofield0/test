@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>payment@saiaku</title>
+    </head>
+    <body>
+        <div id="title">
+            <h1>payment</h1>
+        </div>
+        <div id="user-information">
+            <label>
+                name
+                <input type="text" id="name">
+            </label>
+            <label>
+                birth
+                <input type="text" id="birth">
+            </label>
+            <label>
+                mail
+                <input type="text" id="mail">
+            </label>
+            <label>
+                number
+                <input type="text" id="number">
+            </label>
+            <label>
+                postal code
+                <input type="text" id="code">
+            </label>
+        </div>
+        <div id="pay-information">
+            <label>how 2 pay
+                <input type="text" id="payment">
+            </label>
+        </div>
+        <div id="agreement">
+
+
+            <p>Privacy Policy
+This website is a test and learning project created for the purpose of checking form layout, user interface behavior, and input validation.
+
+1. About Information Input
+This website contains form fields such as name and email address; however,any information entered into the form is not transmitted, communicated, or stored in any way.
+Even if the submit button is pressed, no data is sent to a server, no external communication occurs, and no information is saved.
+
+2. Use of Information
+The entered content is used only for on-screen behavior and display testing purposes. The information is not collected, processed, or used as personal data.
+
+3. Third-Party Disclosure
+Since no data transmission occurs, the entered information is not provided to any third party.
+
+4. Important Notice
+This website is intended for testing purposes. Please do not enter real or sensitive personal information.
+
+5. Changes to This Policy
+This privacy policy may be updated without prior notice in accordance with changes to the test content.</p>
+
+
+            <label>how abowt policy
+                <input type="text" id="agree">
+            </label>
+        </div>
+        <style>
+            input:focus{
+                outline-color: #6869fa;
+            }
+            #error {
+                color: red;
+            }
+            button{
+                transition: 0.1s;
+                box-shadow: 0px 0px 0px yellow;
+            }
+            button.ready{
+                box-shadow: 0px 0px 10px yellow;
+            }
+        </style>
+        <div id="submit">
+            <label>
+                <button id="submit-button">submit</button>
+            </label>
+            <p id="error"></p>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
