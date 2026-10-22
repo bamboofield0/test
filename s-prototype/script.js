@@ -77,6 +77,8 @@ const inputs = [
     agree
 ];
 
+/*色変更無効化
+
 inputs.forEach(function (input) {
 
     input.addEventListener("input", function () {
@@ -91,6 +93,7 @@ inputs.forEach(function (input) {
 
 });
 
+*/
 
 // submitボタンを押したとき
 submit.addEventListener("click", function () {
@@ -161,6 +164,7 @@ submit.addEventListener("click", function () {
     error.textContent = "Success!";
 });
 
+/* 無効化
 
 // マウスがボタンの20px以内に近づいたら逃げる
 document.addEventListener("mousemove", function (event) {
@@ -262,3 +266,5 @@ document.addEventListener("mousemove", function (event) {
         moveCount++;
     }
 });
+
+*/
